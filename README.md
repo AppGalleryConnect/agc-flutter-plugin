@@ -14,7 +14,7 @@ These are the available plugins in this repository.
 | Demo | Version | Documentation |
 |--------|-----|-----|
 | [agc-remoteconfig-flutter](./agc-remoteconfig-flutter) | [![version](https://img.shields.io/badge/Release-1.1.0-yellow)](./agc-remoteconfig-flutter) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-remoteconfig-flutter-usage-0000001063287007) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-remoteconfig-overview-0000001064965376) |
-| [agc-crash-reactnative](./agc-crash-reactnative) | [![version](https://img.shields.io/badge/Release-1.1.0-yellow)](./agc-crash-reactnative) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-crash-flutter-usage-0000001063046945) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-overview-0000001063050323) |
+| [agc-crash-flutter](./agc-crash-flutter) | [![version](https://img.shields.io/badge/Release-1.1.0-yellow)](./agc-crash-flutter) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-crash-flutter-usage-0000001063046945) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-overview-0000001063050323) |
 
 ## Precautions
 The agc-flutter-plugin project contains 2 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
