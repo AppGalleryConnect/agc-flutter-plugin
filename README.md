@@ -18,7 +18,7 @@ These are the available plugins in this repository.
 | [authservice](./authservice) | [![version](https://img.shields.io/badge/Release-1.1.0-yellow)](./authservice) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-flutter-usage-0000001063724847) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-auth-overview-0000001072100218) |
 
 ## Precautions
-The agc-flutter-plugin project contains 2 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
+The agc-flutter-plugin project contains 3 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
 
 ## Question or issues
 If you have questions about how to use AppGallery Connect Demos, try the following options:  
