@@ -13,6 +13,7 @@ These are the available plugins in this repository.
 
 | Demo | Version | Documentation |
 |--------|-----|-----|
+| [apms](./apm) |  |  |
 | [applinking](./applinking) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./applinking) | [Getting Started](https://developer.huawei.com/consumer/cn/doc/development/AppGallery-connect-Guides/agc-get-started-flutter) <br/> [API Reference](https://developer.huawei.com/consumer/cn/doc/development/AppGallery-connect-References/flutter-applinking-overview-0000001071392914) |
 | [appmessaging](./appmessaging) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./appmessaging) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appmessage-introduction-0000001071884501) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-appmessaging-overview-0000001076597432) |
 | [authservice](./authservice) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./authservice) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-flutter-usage-0000001063724847) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-auth-overview-0000001072100218) |
