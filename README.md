@@ -26,7 +26,7 @@ These are the available plugins in this repository.
 
 
 ## Precautions
-The agc-flutter-plugin project contains 3 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
+The agc-flutter-plugin project contains 8 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
 
 ## Question or issues
 If you have questions about how to use AppGallery Connect Demos, try the following options:  
