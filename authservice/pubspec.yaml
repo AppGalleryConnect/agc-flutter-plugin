@@ -1,23 +1,24 @@
 name: agconnect_auth_example
 description: Demonstrates how to use the agconnect_auth plugin.
-version: 1.2.0+300
+version: 1.2.0+301
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  google_sign_in: 4.5.9
+  google_sign_in: 5.0.7
 
-  huawei_account: 5.0.3+302
+  huawei_account: 5.2.0+301
 
   huawei_gameservice: 5.0.4+302
 
-  agconnect_auth: 1.2.0+300
+  agconnect_auth: 1.6.0+300
+#    path: ../agconnect_auth
 
-  cupertino_icons: ^0.1.3
+  cupertino_icons: ^1.0.3
 
 dev_dependencies:
   flutter_test:

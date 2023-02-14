@@ -1,15 +1,6 @@
 /*
-    Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
+ * Copyright (c) Huawei Technologies Co., Ltd. 2020-2021. All rights reserved.
+ */
 
 import 'dart:async';
 
@@ -45,7 +36,7 @@ class _PageUserState extends State<PageUser> {
   }
 
   _updateProfile() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -65,27 +56,27 @@ class _PageUserState extends State<PageUser> {
   }
 
   _getUserExtra() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
-    AGCUserExtra userExtra = await user.userExtra.catchError((error) {
+    AGCUser? user = await AGCAuth.instance.currentUser;
+    AGCUserExtra? userExtra = (await user?.userExtra.catchError((error) {
       print(error);
-    });
+    }));
     setState(() {
       _log =
-          'getUserExtra ${userExtra.createTime}, ${userExtra.lastSignInTime}';
+          'getUserExtra ${userExtra?.createTime}, ${userExtra?.lastSignInTime}';
     });
   }
 
   _getToken() async {
-    AGCUser user = await AGCAuth.instance.currentUser.catchError((e) {
+    AGCUser? user = await AGCAuth.instance.currentUser.catchError((e) {
       AGCAuthException exception = e;
     });
-    TokenResult res = await user?.getToken();
+    TokenResult? res = await user?.getToken();
     setState(() {
       _log = 'getToken ${res?.token} ';
     });
   }
 
-  Future<bool> _showProfileDialog() {
+  Future<dynamic> _showProfileDialog() {
     return showDialog<bool>(
       context: context,
       builder: (ctx) {

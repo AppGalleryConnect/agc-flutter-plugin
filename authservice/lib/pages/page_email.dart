@@ -1,15 +1,6 @@
 /*
-    Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
+ * Copyright (c) Huawei Technologies Co., Ltd. 2020-2021. All rights reserved.
+ */
 
 import 'dart:async';
 
@@ -59,7 +50,7 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
         .createEmailUser(EmailUser(email, verifyCode, password: password))
         .then((value) {
       setState(() {
-        _log = 'createEmailUser = ${value.user.uid} , ${value.user.providerId}';
+        _log = 'createEmailUser = ${value.user?.uid} , ${value.user?.providerId}';
       });
     }).catchError((error) => print(error));
   }
@@ -77,7 +68,7 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
     AGCAuth.instance.signIn(credential).then((value) {
       setState(() {
         _log =
-            'signInWithPassword = ${value.user.uid} , ${value.user.providerId}';
+            'signInWithPassword = ${value.user?.uid} , ${value.user?.providerId}';
       });
     });
   }
@@ -97,7 +88,7 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
     AGCAuth.instance.signIn(credential).then((value) {
       setState(() {
         _log =
-            'signInWithVerifyCode = ${value.user.uid} , ${value.user.providerId}';
+            'signInWithVerifyCode = ${value.user?.uid} , ${value.user?.providerId}';
       });
     });
   }
@@ -133,7 +124,7 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
   }
 
   _link() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -153,12 +144,12 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
       print(error);
     });
     setState(() {
-      _log = 'link email = ${signInResult?.user?.uid}';
+      _log = 'link email = ${signInResult.user?.uid}';
     });
   }
 
   _unlink() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -168,12 +159,12 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
       print(error);
     });
     setState(() {
-      _log = 'unlink email = ${result?.user?.uid}';
+      _log = 'unlink email = ${result.user?.uid}';
     });
   }
 
   _updateEmail() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -192,7 +183,7 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
   }
 
   _updatePassword() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -212,7 +203,7 @@ class _PageEmailAuthState extends State<PageEmailAuth> {
     print('updatePassword');
   }
 
-  Future<bool> _showEmailDialog(VerifyCodeAction action) {
+  Future<dynamic> _showEmailDialog(VerifyCodeAction action) {
     return showDialog<bool>(
       context: context,
       builder: (ctx) {

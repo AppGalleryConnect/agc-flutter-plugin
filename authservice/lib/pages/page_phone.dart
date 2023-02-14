@@ -1,15 +1,6 @@
 /*
-    Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
+ * Copyright (c) Huawei Technologies Co., Ltd. 2020-2021. All rights reserved.
+ */
 
 import 'dart:async';
 
@@ -61,7 +52,7 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
             PhoneUser(countryCode, phoneNumber, verifyCode, password: password))
         .then((value) {
       setState(() {
-        _log = 'createPhoneUser = ${value.user.uid} , ${value.user.providerId}';
+        _log = 'createPhoneUser = ${value.user?.uid} , ${value.user?.providerId}';
       });
     }).catchError((error) => print(error));
   }
@@ -80,7 +71,7 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
     AGCAuth.instance.signIn(credential).then((value) {
       setState(() {
         _log =
-            'signInWithPassword = ${value.user.uid} , ${value.user.providerId}';
+            'signInWithPassword = ${value.user?.uid} , ${value.user?.providerId}';
       });
     });
   }
@@ -101,7 +92,7 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
     AGCAuth.instance.signIn(credential).then((value) {
       setState(() {
         _log =
-            'signInWithVerifyCode = ${value.user.uid} , ${value.user.providerId}';
+            'signInWithVerifyCode = ${value.user?.uid} , ${value.user?.providerId}';
       });
     });
   }
@@ -138,7 +129,7 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
   }
 
   _link() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -159,12 +150,12 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
       print(error);
     });
     setState(() {
-      _log = 'link phone = ${signInResult?.user?.uid}';
+      _log = 'link phone = ${signInResult.user?.uid}';
     });
   }
 
   _unlink() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -174,12 +165,12 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
       print(error);
     });
     setState(() {
-      _log = 'unlink phone = ${result?.user?.uid}';
+      _log = 'unlink phone = ${result.user?.uid}';
     });
   }
 
   _updatePhone() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -201,7 +192,7 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
   }
 
   _updatePassword() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -221,7 +212,7 @@ class _PagePhoneAuthState extends State<PagePhoneAuth> {
     print('updatePassword');
   }
 
-  Future<bool> _showPhoneDialog(VerifyCodeAction action) {
+  Future<dynamic> _showPhoneDialog(VerifyCodeAction action) {
     return showDialog<bool>(
       context: context,
       builder: (ctx) {

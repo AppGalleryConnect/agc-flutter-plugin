@@ -1,15 +1,6 @@
 /*
-    Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
+ * Copyright (c) Huawei Technologies Co., Ltd. 2020-2021. All rights reserved.
+ */
 
 import 'package:agconnect_auth/agconnect_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -50,16 +41,16 @@ class _PageGoogleGameAuthState extends State<PageGoogleGameAuth> {
         'https://www.googleapis.com/auth/contacts.readonly',
       ],
     );
-    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+    final GoogleSignInAccount googleUser = (await _googleSignIn.signIn())!;
     // Obtain the auth details from the request
     final GoogleSignInAuthentication googleAuth =
         await googleUser.authentication;
     AGCAuthCredential credential =
-        GoogleGameAuthProvider.credentialWithToken(googleAuth.serverAuthCode);
+        GoogleGameAuthProvider.credentialWithToken(googleAuth.serverAuthCode ?? "");
     AGCAuth.instance.signIn(credential).then((value) {
       setState(() {
         _log =
-            'signInGoogleGame = ${value.user.uid} , ${value.user.providerId}';
+            'signInGoogleGame = ${value.user?.uid} , ${value.user?.providerId}';
       });
     });
   }
@@ -81,7 +72,7 @@ class _PageGoogleGameAuthState extends State<PageGoogleGameAuth> {
   }
 
   _link() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -93,22 +84,22 @@ class _PageGoogleGameAuthState extends State<PageGoogleGameAuth> {
         'https://www.googleapis.com/auth/contacts.readonly',
       ],
     );
-    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+    final GoogleSignInAccount googleUser = (await _googleSignIn.signIn())!;
     // Obtain the auth details from the request
     final GoogleSignInAuthentication googleAuth =
         await googleUser.authentication;
     AGCAuthCredential credential =
-        GoogleGameAuthProvider.credentialWithToken(googleAuth.idToken);
+        GoogleGameAuthProvider.credentialWithToken(googleAuth.idToken ?? "");
     SignInResult signInResult = await user.link(credential).catchError((error) {
       print(error);
     });
     setState(() {
-      _log = 'link GoogleGame = ${signInResult?.user?.uid}';
+      _log = 'link GoogleGame = ${signInResult.user?.uid}';
     });
   }
 
   _unlink() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -118,7 +109,7 @@ class _PageGoogleGameAuthState extends State<PageGoogleGameAuth> {
       print(error);
     });
     setState(() {
-      _log = 'unlink googleGame = ${result?.user?.uid}';
+      _log = 'unlink googleGame = ${result.user?.uid}';
     });
   }
 

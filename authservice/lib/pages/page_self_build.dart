@@ -1,15 +1,6 @@
 /*
-    Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
+ * Copyright (c) Huawei Technologies Co., Ltd. 2020-2021. All rights reserved.
+ */
 
 import 'dart:async';
 
@@ -55,7 +46,7 @@ class _PageSelfBuildAuthState extends State<PageSelfBuildAuth> {
         SelfBuildAuthProvider.credentialWithToken(token);
     AGCAuth.instance.signIn(credential).then((value) {
       setState(() {
-        _log = 'signIn = ${value.user.uid} , ${value.user.providerId}';
+        _log = 'signIn = ${value.user?.uid} , ${value.user?.providerId}';
       });
     });
   }
@@ -77,7 +68,7 @@ class _PageSelfBuildAuthState extends State<PageSelfBuildAuth> {
   }
 
   _link() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -94,12 +85,12 @@ class _PageSelfBuildAuthState extends State<PageSelfBuildAuth> {
       print(error);
     });
     setState(() {
-      _log = 'link self build = ${signInResult?.user?.uid}';
+      _log = 'link self build = ${signInResult.user?.uid}';
     });
   }
 
   _unlink() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -109,11 +100,11 @@ class _PageSelfBuildAuthState extends State<PageSelfBuildAuth> {
       print(error);
     });
     setState(() {
-      _log = 'unlink self build = ${result?.user?.uid}';
+      _log = 'unlink self build = ${result.user?.uid}';
     });
   }
 
-  Future<bool> _showSelfBuildDialog(VerifyCodeAction action) {
+  Future<dynamic> _showSelfBuildDialog(VerifyCodeAction action) {
     return showDialog<bool>(
       context: context,
       builder: (ctx) {

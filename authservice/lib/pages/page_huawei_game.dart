@@ -1,23 +1,12 @@
 /*
-    Copyright 2020-2021. HuaweiGame Technologies Co., Ltd. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
+ * Copyright (c) Huawei Technologies Co., Ltd. 2020-2021. All rights reserved.
+ */
 
 import 'package:agconnect_auth/agconnect_auth.dart';
 import 'package:agconnect_auth_example/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:huawei_account/hmsauthservice/hms_auth_service.dart';
 import 'package:huawei_account/huawei_account.dart';
-import 'package:huawei_account/model/hms_auth_huawei_id.dart';
 import 'package:huawei_gameservice/huawei_gameservice.dart';
 
 class PageHuaweiGameAuth extends StatefulWidget {
@@ -45,20 +34,21 @@ class _PageHuaweiGameAuthState extends State<PageHuaweiGameAuth> {
   }
 
   _signIn() async {
-    final helper = new HmsAuthParamHelper();
+    final helper = AccountAuthParamsHelper();
     helper
-      ..setIdToken()
       ..setAccessToken()
-      ..setAuthorizationCode()
       ..setEmail()
+      ..setIdToken()
+      ..setAuthorizationCode()
       ..setProfile()
-      ..setDefaultParam(HmsAuthParams().defaultAuthRequestParamGame)
-      ..setScopeList([
-        HmsScope.game,
-      ]);
+      ..setDefaultParam(AccountAuthParams.defaultAuthRequestParamGame)
+    ..setScopeList([
+     Scope.game,
+    ]);
+
     try {
-      HmsAuthHuaweiId huaweiGame =
-          await HmsAuthService.signIn(authParamHelper: helper);
+      AuthAccount huaweiId =
+          await AccountAuthService.signIn(helper);
 
       Player result = await PlayersClient.getCurrentPlayer();
       AGCAuthCredential credential = HuaweiGameAuthProvider.credentialWithToken(
@@ -71,7 +61,7 @@ class _PageHuaweiGameAuthState extends State<PageHuaweiGameAuth> {
       AGCAuth.instance.signIn(credential).then((value) {
         setState(() {
           _log =
-              'signInHuaweiGameId = ${value.user.uid} , ${value.user.providerId}';
+              'signInHuaweiGameId = ${value.user?.uid} , ${value.user?.providerId}';
         });
       });
     } on Exception catch (e) {
@@ -96,25 +86,25 @@ class _PageHuaweiGameAuthState extends State<PageHuaweiGameAuth> {
   }
 
   _link() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
     }
-    final helper = new HmsAuthParamHelper();
+    final helper = AccountAuthParamsHelper();
     helper
-      ..setIdToken()
       ..setAccessToken()
-      ..setAuthorizationCode()
       ..setEmail()
+      ..setIdToken()
+      ..setAuthorizationCode()
       ..setProfile()
-      ..setDefaultParam(HmsAuthParams().defaultAuthRequestParamGame)
+      ..setDefaultParam(AccountAuthParams.defaultAuthRequestParamGame)
       ..setScopeList([
-        HmsScope.game,
+        Scope.game,
       ]);
     try {
-      HmsAuthHuaweiId huaweiGame =
-          await HmsAuthService.signIn(authParamHelper: helper);
+      AuthAccount huaweiGame =
+          await AccountAuthService.signIn(helper);
 
       Player result = await PlayersClient.getCurrentPlayer();
       AGCAuthCredential credential = HuaweiGameAuthProvider.credentialWithToken(
@@ -129,7 +119,7 @@ class _PageHuaweiGameAuthState extends State<PageHuaweiGameAuth> {
         print(error);
       });
       setState(() {
-        _log = 'link HuaweiGame = ${signInResult?.user?.uid}';
+        _log = 'link HuaweiGame = ${signInResult.user?.uid}';
       });
     } on Exception catch (e) {
       print(e.toString());
@@ -137,7 +127,7 @@ class _PageHuaweiGameAuthState extends State<PageHuaweiGameAuth> {
   }
 
   _unlink() async {
-    AGCUser user = await AGCAuth.instance.currentUser;
+    AGCUser? user = await AGCAuth.instance.currentUser;
     if (user == null) {
       print("no user signed in");
       return;
@@ -147,7 +137,7 @@ class _PageHuaweiGameAuthState extends State<PageHuaweiGameAuth> {
       print(error);
     });
     setState(() {
-      _log = 'unlink HuaweiGame = ${result?.user?.uid}';
+      _log = 'unlink HuaweiGame = ${result.user?.uid}';
     });
   }
 
