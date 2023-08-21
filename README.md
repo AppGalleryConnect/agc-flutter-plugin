@@ -1,9 +1,9 @@
 # agc-flutter-plugin
 [![license](https://img.shields.io/badge/license-Apache--2.0-green)](./LICENCE)
 
-This repo contains the source code for AGC flutter-plugin Demos, which are developed by the AppGallery Connect team.
+This repo contains the source code for AGC Flutter Plugins, which are developed by the AppGallery Connect team.
 
-These demos enable access to using specific APIs. For more information
+These libraries contains demo applications to enable access to using specific APIs. For more information
 about demos, and how to use them, see
 [Official Documentations](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-flutter-usage-0000001063724847).
 
@@ -13,20 +13,19 @@ These are the available plugins in this repository.
 
 | Demo | Version | Documentation |
 |--------|-----|-----|
-| [apms](./apm) |  |  |
+| [cloudfunction](./cloudfunctions) | [![version](https://img.shields.io/badge/Release-1.9.0+300-green)](./cloudfunctions) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudfunction-introduction-0000001059279544) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-function-overview-0000001082994615) |
+| [crash](./crash) | [![version](https://img.shields.io/badge/Release-1.9.0+300-green)](./crash) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-crash-flutter-usage-0000001063046945) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-overview-0000001063050323) |
+| [remoteconfig](./remoteconfig) | [![version](https://img.shields.io/badge/Release-1.9.0+300-green)](./remoteconfig) |[Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-remoteconfig-flutter-usage-0000001063287007) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-remoteconfig-overview-0000001064965376) |
+| [core](./remoteconfig) | [![version](https://img.shields.io/badge/Release-1.9.0+300-green)](./remoteconfig) |[Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-get-started-flutter-0000001057642285) <br/>|
 | [applinking](./applinking) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./applinking) | [Getting Started](https://developer.huawei.com/consumer/cn/doc/development/AppGallery-connect-Guides/agc-get-started-flutter) <br/> [API Reference](https://developer.huawei.com/consumer/cn/doc/development/AppGallery-connect-References/flutter-applinking-overview-0000001071392914) |
 | [appmessaging](./appmessaging) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./appmessaging) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appmessage-introduction-0000001071884501) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-appmessaging-overview-0000001076597432) |
 | [authservice](./authservice) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./authservice) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-flutter-usage-0000001063724847) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-auth-overview-0000001072100218) |
 | [clouddb](./clouddb) | [![version](https://img.shields.io/badge/Release-1.3.0.300-yellow)](./clouddb) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-clouddb-introduction-0000001054212760) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-clouddb-overview-0000001108597968) |
-| [cloudfunction](./cloudfunctions) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./cloudfunctions) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudfunction-introduction-0000001059279544) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-function-overview-0000001082994615) |
-| [crash](./crash) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./crash) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-crash-flutter-usage-0000001063046945) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-overview-0000001063050323) |
-| [remoteconfig](./remoteconfig) | [![version](https://img.shields.io/badge/Release-1.3.0-yellow)](./remoteconfig) |[Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-remoteconfig-flutter-usage-0000001063287007) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/flutter-remoteconfig-overview-0000001064965376) |
-
 
 
 
 ## Precautions
-The agc-flutter-plugin project contains 8 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
+The agc-flutter-plugin project contains 9 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
 
 ## Question or issues
 If you have questions about how to use AppGallery Connect Demos, try the following options:  

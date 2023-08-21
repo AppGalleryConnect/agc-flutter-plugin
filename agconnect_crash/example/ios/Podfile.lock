@@ -1,0 +1,59 @@
+PODS:
+  - "agconnect_crash (1.9.0+300)":
+    - AGConnectCrash (= 1.9.0.300)
+    - Flutter
+    - HiAnalytics
+  - AGConnectCore (1.9.0.300):
+    - HMFoundation (~> 1.4)
+  - AGConnectCrash (1.9.0.300):
+    - AGConnectCredential (~> 1.4)
+  - AGConnectCredential (1.9.0.300):
+    - AGConnectCore (~> 1.4)
+  - Flutter (1.0.0)
+  - HiAnalytics (6.7.0.300):
+    - AGConnectCredential
+  - HMFoundation (1.9.0.300)
+  - "huawei_analytics (6.5.0+301)":
+    - Flutter
+    - HiAnalytics (= 6.7.0.300)
+  - integration_test (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - agconnect_crash (from `.symlinks/plugins/agconnect_crash/ios`)
+  - Flutter (from `Flutter`)
+  - huawei_analytics (from `.symlinks/plugins/huawei_analytics/ios`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AGConnectCore
+    - AGConnectCrash
+    - AGConnectCredential
+    - HiAnalytics
+    - HMFoundation
+
+EXTERNAL SOURCES:
+  agconnect_crash:
+    :path: ".symlinks/plugins/agconnect_crash/ios"
+  Flutter:
+    :path: Flutter
+  huawei_analytics:
+    :path: ".symlinks/plugins/huawei_analytics/ios"
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  agconnect_crash: c8208065bb3c7c8626b8303f65ba0f05305b25ab
+  AGConnectCore: f07ea0cd4aefe5c467b8336ea9fa9474c348a028
+  AGConnectCrash: f22b6931eaa19686a96ba2b8df027fc3b791ad4c
+  AGConnectCredential: 50729e5d8fe6bbee87e053ead56e8b4427e276eb
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  HiAnalytics: 1fb630149772c1d67eb8e565287d34e26eff126f
+  HMFoundation: 37a598de63a67de3ce428ced640bc6123048097b
+  huawei_analytics: baecc3691207dc2782dfe824a096293b34e89cd8
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+
+PODFILE CHECKSUM: 9780b7dfa77c79682bfc0e2127e65e28f7a449ec
+
+COCOAPODS: 1.12.1
