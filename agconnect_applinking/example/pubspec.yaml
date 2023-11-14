@@ -1,0 +1,22 @@
+name: agconnect_applinking_example
+description: Demonstrates how to use the agconnect_applinking plugin.
+version: 1.9.0+300
+publish_to: none
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  agconnect_applinking:
+    path: ../
+
+  cupertino_icons: ^1.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

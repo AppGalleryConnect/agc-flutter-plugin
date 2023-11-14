@@ -78,7 +78,7 @@ class HomePageState extends State<HomePage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('AGC Remote Config Demo'),
         ),
         body: Center(
           child: Column(
@@ -110,14 +110,14 @@ class HomePageState extends State<HomePage> {
                   onPressed: _buttonCustomClicked,
                   color: Colors.blue,
                   child: const Text(
-                    'setCustomAttributes',
+                    'Set Custom Attributes',
                     style: TextStyle(color: Colors.white),
                   )),
               MaterialButton(
                   onPressed: _getCustomAttributes,
                   color: Colors.blue,
                   child: const Text(
-                    'getCustomAttributes',
+                    'Get Custom Attributes',
                     style: TextStyle(color: Colors.white),
                   )),
             ],

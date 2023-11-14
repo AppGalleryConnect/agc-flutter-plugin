@@ -1,0 +1,27 @@
+name: agconnect_applinking
+description:
+  App Linking allows you to create cross-platform links that can work as
+  defined regardless of whether your app has been installed by a user.
+version: 1.9.0+300
+homepage: https://developer.huawei.com/consumer/en/agconnect/
+
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.huawei.agc.flutter.applinking
+        pluginClass: AppLinkingPlugin
+      ios:
+        pluginClass: AppLinkingPlugin
