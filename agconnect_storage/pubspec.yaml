@@ -1,0 +1,27 @@
+name: agconnect_cloudstorage
+description: Cloud Storage allows you to store high volumes contents securely and economically.
+homepage: https://developer.huawei.com/consumer/en/agconnect/
+
+version: 1.9.0+300
+
+environment:
+  sdk: ">=2.14.0 <4.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 1.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.huawei.agconnect.cloudstorage
+        pluginClass: AGCStoragePlugin
+      ios:
+        pluginClass: AGCStoragePlugin
