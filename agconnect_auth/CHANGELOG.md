@@ -1,3 +1,6 @@
+## 1.9.0+310
+  - Fixes an issue where Twitter auth provider initialization fails for some environments.
+
 ## 1.9.0+300
   - Added third party auth provider support of Alipay
   - Added twitter auth provider new method.

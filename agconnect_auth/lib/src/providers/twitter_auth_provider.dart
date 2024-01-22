@@ -48,7 +48,7 @@ class TwitterAuthCredential extends AGCAuthCredential {
   String secret = "";
   late bool autoCreateUser;
   bool _v2 = false;
-  late TwitterAuthParam _twitterAuthParam;
+  TwitterAuthParam _twitterAuthParam = TwitterAuthParam("", "", "", "");
 
   TwitterAuthCredential(
       this.token, this.autoCreateUser, this.secret, AuthProviderType provider)
