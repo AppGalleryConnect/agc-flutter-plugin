@@ -1,0 +1,28 @@
+name: agconnect_clouddb
+description: CloudDB is a device-cloud synergy database product that provides data synergy management capabilities between device and cloud.
+homepage: https://developer.huawei.com/consumer/en/agconnect/
+repository: https://github.com/AppGalleryConnect/agc-flutter-plugin
+
+version: 1.9.0+300
+
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 1.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.huawei.agconnectclouddb
+        pluginClass: AGConnectCloudDBPlugin
+      ios:
+        pluginClass: AGConnectCloudDBPlugin

@@ -1,0 +1,14 @@
+{
+  "fileVersion": "1",
+  "name": "Flutter-AGC-CloudDB",
+  "description": "AppGallery Connect Cloud DB plugin for Flutter",
+  "version": "1.9.0.300",
+  "zipName": "flutter-clouddb-package",
+  "packageName": "agconnect_clouddb",
+  "type": "microService",
+  "processes": {
+    "Flutter-AGC-CloudDB": {
+      "subscribes": []
+    }
+  }
+}

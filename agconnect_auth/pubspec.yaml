@@ -1,6 +1,6 @@
 name: agconnect_auth
 description: Flutter plugin for AppGallery Connect Auth SDK.
-version: 1.9.0+300
+version: 1.9.0+310
 homepage: https://developer.huawei.com/consumer/cn/doc/development/AppGallery-connect-Guides/agc-auth-introduction-0000001053732605
 
 environment:
