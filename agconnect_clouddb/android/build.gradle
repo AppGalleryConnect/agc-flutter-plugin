@@ -23,6 +23,7 @@ rootProject.allprojects {
 apply plugin: "com.android.library"
 
 android {
+    namespace "com.huawei.agconnectclouddb"
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
