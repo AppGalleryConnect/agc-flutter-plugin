@@ -31,7 +31,6 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 public class AppLinkingPlugin implements FlutterPlugin, ActivityAware {
     private MethodChannel methodChannel;
@@ -41,11 +40,7 @@ public class AppLinkingPlugin implements FlutterPlugin, ActivityAware {
     private EventChannel.StreamHandler streamHandler;
     private FlutterPluginBinding flutterPluginBinding;
 
-    public static void registerWith(Registrar registrar) {
-        AppLinkingPlugin appLinkingPlugin = new AppLinkingPlugin();
-        registrar.publish(appLinkingPlugin);
-        appLinkingPlugin.onAttachedToEngine(registrar.messenger(), registrar.activity());
-    }
+
 
     private void onAttachedToEngine(final BinaryMessenger messenger, final Activity activity) {
         if (AGConnectInstance.getInstance() == null) {

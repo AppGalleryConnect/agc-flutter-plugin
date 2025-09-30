@@ -9,8 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
-    }
+        classpath 'com.android.tools.build:gradle:8.1.2'    }
 }
 
 rootProject.allprojects {
@@ -24,17 +23,19 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-     compileSdkVersion 30
+     compileSdkVersion 34
     buildToolsVersion "30.0.3"
-
+    if (project.android.hasProperty('namespace')) {
+        namespace 'com.huawei.agconnectcore'
+    }
     defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 34
     }
     lintOptions {
         disable 'InvalidPackage'
     }
     dependencies {
-        implementation  'com.huawei.agconnect:agconnect-core:1.9.0.300'
+        implementation  'com.huawei.agconnect:agconnect-core:1.9.1.300'
     }
 }

@@ -22,7 +22,7 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+
 
 public class AGConnectAuthPlugin implements FlutterPlugin, EventChannel.StreamHandler {
     private MethodChannel channel;
@@ -31,10 +31,6 @@ public class AGConnectAuthPlugin implements FlutterPlugin, EventChannel.StreamHa
     private MethodCallHandler methodCallHandler;
     private AGConnectAuthModule agConnectAuthModule;
 
-    public static void registerWith(Registrar registrar) {
-        AGConnectAuthPlugin instance = new AGConnectAuthPlugin();
-        instance.initPlugin(registrar.messenger(), registrar.context().getApplicationContext());
-    }
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
