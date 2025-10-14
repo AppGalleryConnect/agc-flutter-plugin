@@ -31,6 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -44,16 +45,8 @@ public class AGConnectRemoteConfigPlugin implements FlutterPlugin, MethodCallHan
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         initAGConnectSDK(flutterPluginBinding.getApplicationContext());
-        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(),
-                "com.huawei.flutter/agconnect_remote_config");
+        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "com.huawei.flutter/agconnect_remote_config");
         channel.setMethodCallHandler(this);
-    }
-
-    public static void registerWith(Registrar registrar) {
-        initAGConnectSDK(registrar.context().getApplicationContext());
-        final MethodChannel channel = new MethodChannel(registrar.messenger(),
-                "com.huawei.flutter/agconnect_remote_config");
-        channel.setMethodCallHandler(new AGConnectRemoteConfigPlugin());
     }
 
     static void initAGConnectSDK(Context context) {
@@ -95,9 +88,7 @@ public class AGConnectRemoteConfigPlugin implements FlutterPlugin, MethodCallHan
                     if (e instanceof AGCConfigException) {
                         AGCConfigException exception = (AGCConfigException) e;
                         HashMap<String, Object> detail = new HashMap<>();
-                        detail.put(
-                                "throttleEndTime",
-                                exception.getThrottleEndTimeMillis());
+                        detail.put("throttleEndTime", exception.getThrottleEndTimeMillis());
                         result.error(String.valueOf(exception.getCode()), exception.getErrMsg(), detail);
                     } else if (e instanceof AGCException) {
                         AGCException exception = (AGCException) e;
