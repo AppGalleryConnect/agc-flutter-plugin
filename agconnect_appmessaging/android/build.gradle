@@ -26,6 +26,10 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.huawei.agc.flutter.appmessaging.agconnect_appmessaging'
+    }
  
     defaultConfig {
         minSdkVersion 19

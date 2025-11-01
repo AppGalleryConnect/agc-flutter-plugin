@@ -25,6 +25,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion = '30.0.3'
 
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.huawei.agc.flutter.applinking'
+    }
+
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 30
