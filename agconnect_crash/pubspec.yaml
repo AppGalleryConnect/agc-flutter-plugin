@@ -1,6 +1,6 @@
 name: agconnect_crash
 description: Flutter plugin for AppGallery Connect Crash SDK.
-version: 1.9.0+300
+version: 1.9.1+301
 homepage: https://developer.huawei.com/consumer/cn/doc/development/AppGallery-connect-Guides/agc-crash-introduction
 
 environment:
