@@ -52,7 +52,7 @@ class AGCCrash {
   /// ```
   Future<void> onFlutterError(FlutterErrorDetails details) async {
     FlutterError.dumpErrorToConsole(details, forceReport: true);
-    recordError(details.exceptionAsString(), details.stack!);
+    await recordError(details.exception, details.stack);
   }
 
   ///Call the onFlutterError and recordError methods in the main function to
@@ -75,8 +75,12 @@ class AGCCrash {
   ///  AGCCrash.instance.recordError(error, stackTrace, true);
   ///}
   /// ```
-  Future<void> recordError(dynamic exception, StackTrace stack,
-      {bool fatal = false}) async {
+  Future<void> recordError(
+    dynamic exception,
+    StackTrace? stack, {
+    bool fatal = false,
+  }) async {
+    stack ??= StackTrace.current;
     debugPrint(
         'Error caught by AGCCrash : ${exception.toString()} \n${stack.toString()}');
     await _channel.invokeMethod('recordError', <String, String>{
